@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
   res.json({ version: packageInfo.version })
 })
 
-const server = app.listen(process.env.PORT, '0.0.0.0', function () {
+const server = app.listen(8080, '0.0.0.0', function () {
   const host = server.address().address
   const port = server.address().port
   console.log('Web server started at http://%s:%s', host, port)

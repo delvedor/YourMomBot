@@ -7,19 +7,14 @@ const db = require('./db')
 const remove = require('unordered-array-remove')
 
 // Declarations
-let token = null
-let chatId = null
+let token = process.env.TOKEN
+let chatId = process.env.CHATID
 let bot = null
 
 if (process.env.NODE_ENV === 'production') {
-  token = process.env.TOKEN
-  chatId = process.env.CHATID
   bot = new TelegramBot(token)
   bot.setWebHook(process.env.HEROKU_URL + bot.token)
 } else {
-  let param = require('./token.json')
-  token = param.token
-  chatId = param.chatId
   bot = new TelegramBot(token, { polling: true })
 }
 
