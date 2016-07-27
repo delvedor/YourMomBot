@@ -2,22 +2,30 @@
   "name": "YourMomBot",
   "version": "1.0.0",
   "description": "",
-  "main": "yourmom.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node yourmom.js",
-    "cleandb": "rm -rf .yourmomdb",
-    "lint": "standard"
+    "start": "export $(cat .env | xargs) && node index.js",
+    "lint": "standard",
+    "set_env": "export $(cat .env | xargs)",
+    "switch_to_dev": "export $(cat .env | xargs) && wget --spider https://api.telegram.org/bot$TOKEN/setWebhook?url= --delete-after && node index.js"
   },
   "keywords": [],
   "private": true,
   "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
   "license": "MIT",
   "dependencies": {
-    "level": "^1.4.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
     "match-all": "^1.1.3",
-    "node-telegram-bot-api": "^0.23.3"
+    "node-telegram-bot-api": "^0.23.3",
+    "object.omit": "^2.0.0",
+    "tyval": "^3.0.0",
+    "unordered-array-remove": "^1.0.2"
   },
   "devDependencies": {
     "standard": "^7.1.2"
+  },
+  "engines": {
+    "node": "6.3.1"
   }
 }
