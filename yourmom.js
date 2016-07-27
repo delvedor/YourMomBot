@@ -7,8 +7,8 @@ const db = require('./db')
 const remove = require('unordered-array-remove')
 
 // Declarations
-let token = process.env.TOKEN
-let chatId = process.env.CHATID
+const token = process.env.TOKEN
+const chatId = process.env.CHATID
 let bot = null
 
 if (process.env.NODE_ENV === 'production') {
