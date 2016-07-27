@@ -102,3 +102,5 @@ function sendHowMom (message, match) {
 
 sendHowMom()
 // setInterval(sendHowMom, 1000 * 60 * 60 * 24)
+
+module.exports = bot
