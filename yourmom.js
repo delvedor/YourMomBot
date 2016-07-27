@@ -14,8 +14,10 @@ let bot = null
 if (process.env.NODE_ENV === 'production') {
   bot = new TelegramBot(token)
   bot.setWebHook(process.env.HEROKU_URL + bot.token)
+  console.log('Running in production')
 } else {
   bot = new TelegramBot(token, { polling: true })
+  console.log('Running in development')
 }
 console.log('Bot started!')
 console.log('Token:', token)
