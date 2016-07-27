@@ -17,6 +17,9 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   bot = new TelegramBot(token, { polling: true })
 }
+console.log('Bot started!')
+console.log('Token:', token)
+console.log('ChatId:', chatId)
 
 // Custom keyboards
 const keyboards = {
