@@ -43,3 +43,4 @@ jspm_packages
 *.swp
 
 token.json
+.env
